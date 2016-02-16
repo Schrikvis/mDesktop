@@ -557,7 +557,7 @@ settings:
 		cleannexthotkey := nexthotkey
 	}
 	gui 7: add,text,xm+12 yp+25 ,To switch to the next desktop:
-	Gui 7: Add, DropDownList,altsubmit vthenextmod Choose%thenextmod% w150, Ctrl+Right Arrow|Shift+Right Arrow|Alt+Right Arrow|
+	Gui 7: Add, DropDownList,altsubmit vthenextmod Choose%thenextmod% w150, Alt+Ctrl+Right Arrow|Shift+Right Arrow|Alt+Right Arrow|
 
 	; Switch Prev Hotkeys
 	prevhaswin=UnChecked
@@ -571,7 +571,7 @@ settings:
 		cleanprevhotkey := prevhotkey
 	}
 	gui 7: add,text,xm+12 yp+25 ,To switch to the previous desktop:
-	Gui 7: Add, DropDownList, vthepremod w150 altsubmit Choose%thepremod%, Ctrl+Left Arrow|Shift+Left Arrow|Alt+Left Arrow|
+	Gui 7: Add, DropDownList, vthepremod w150 altsubmit Choose%thepremod%, Alt+Ctrl+Left Arrow|Shift+Left Arrow|Alt+Left Arrow|
 	If runatstartup
 	{
 		gui 7: add,checkbox,vrunatstartup checked, Run at Startup?
@@ -731,7 +731,7 @@ IniWrite , %rightaltkey%, %settings%, settings, rightaltkey
 
 if (thenextmod=1)
 {
-	newnexthotkey=^RIght
+	newnexthotkey=!^RIght
 }
 else if (thenextmod=2)
 {
@@ -745,7 +745,7 @@ else if (thenextmod=3)
 
 if (thepremod=1)
 {
-	newprevhotkey=^Left
+	newprevhotkey=!^Left
 }
 else if (thepremod=2)
 {
